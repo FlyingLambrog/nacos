@@ -14,33 +14,22 @@
  * limitations under the License.
  */
 
-package com.alibaba.nacos.config.server.utils;
-
-import java.util.concurrent.atomic.AtomicLong;
+package com.alibaba.nacos.naming.constants;
 
 /**
- * Accumulate Stat Count.
+ * constant for request.
  *
- * @author Nacos
+ * @author nacos
  */
-public class AccumulateStatCount {
+public class RequestConstant {
     
-    final AtomicLong total = new AtomicLong(0);
+    public static final String HEALTHY_KEY = "healthy";
     
-    long lastStatValue = 0;
+    public static final String VALID_KEY = "valid";
     
-    public long increase() {
-        return total.incrementAndGet();
-    }
+    public static final String IP_KEY = "ip";
     
-    /**
-     * accumulate stat.
-     *
-     * @return stat.
-     */
-    public long stat() {
-        long tmp = total.get() - lastStatValue;
-        lastStatValue += tmp;
-        return tmp;
-    }
+    public static final String PORT_KEY = "port";
+    
+    
 }
